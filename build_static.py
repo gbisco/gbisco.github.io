@@ -19,7 +19,7 @@ if OUT.exists():
 OUT.mkdir(parents=True, exist_ok=True)
 
 # copy static/ into docs/static (merge if both exist)
-for s in STATIC_DIRS:
+for s in [ROOT / "app" / "static", ROOT / "static"]:
     if s.exists():
         shutil.copytree(s, OUT / "static", dirs_exist_ok=True)
 
