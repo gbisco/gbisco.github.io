@@ -1,0 +1,166 @@
+<!--- Base template --->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Education</title>
+    <link rel="stylesheet" href="static/css/style.css">
+
+</head>
+<body>
+    <header>
+        <!-- app/templates/navbar.html -->
+<nav class="navbar" aria-label="Primary">
+  <div class="container">
+    <ul class="nav-right">
+      <li><a href="index.html" data-link="index.html">Home</a></li>
+      <li><a href="projects.html" data-link="projects.html">Projects</a></li>
+      <li><a href="education.html" data-link="education.html">Education</a></li>
+      <li><a href="contact.html" data-link="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<script>
+  (function () {
+    var path = location.pathname.split('/').pop() || 'index.html';
+    document.querySelectorAll('.nav-right a').forEach(function (a) {
+      if (a.getAttribute('data-link') === path) a.classList.add('active');
+    });
+  })();
+</script>
+    </header>
+
+    <main>
+        
+<section class="education">
+  <div class="container">
+    <h1>Degrees & Certifications</h1>
+
+    <!-- Reuse projects grid so the layout matches exactly -->
+    <div class="projects-grid">
+      
+        <!-- app/templates/_education_card.html -->
+<article class="project-card">
+  <img class="project-image"
+       src="static/images/jhu.jpg"
+       alt="Johns Hopkins University logo">
+
+  <div class="project-body">
+    <h3 class="edu-title">Applied Generative AI Certificate</h3>
+
+    <!-- Years: show "start – end" if both exist; otherwise just start -->
+    <p class="edu-years">
+      
+        2025
+      
+    </p>
+
+    <!-- Institution on its own line, italicized -->
+    <p class="edu-inst"><em>Johns Hopkins University</em></p>
+
+    <div class="project-actions">
+      <a class="btn"
+         href="static/pdfs/applied_gen_ai.pdf"
+         target="_blank" rel="noopener">
+        View PDF
+      </a>
+    </div>
+  </div>
+</article>
+      
+        <!-- app/templates/_education_card.html -->
+<article class="project-card">
+  <img class="project-image"
+       src="static/images/mit.jpg"
+       alt="MIT Professional Education logo">
+
+  <div class="project-body">
+    <h3 class="edu-title">Applied AI and Data Science Graduate Certificate</h3>
+
+    <!-- Years: show "start – end" if both exist; otherwise just start -->
+    <p class="edu-years">
+      
+        2024
+      
+    </p>
+
+    <!-- Institution on its own line, italicized -->
+    <p class="edu-inst"><em>MIT Professional Education</em></p>
+
+    <div class="project-actions">
+      <a class="btn"
+         href="static/pdfs/mit.pdf"
+         target="_blank" rel="noopener">
+        View PDF
+      </a>
+    </div>
+  </div>
+</article>
+      
+        <!-- app/templates/_education_card.html -->
+<article class="project-card">
+  <img class="project-image"
+       src="static/images/wsu.png"
+       alt="Washington State University logo">
+
+  <div class="project-body">
+    <h3 class="edu-title">B.S. in Mechanical Engineering</h3>
+
+    <!-- Years: show "start – end" if both exist; otherwise just start -->
+    <p class="edu-years">
+      
+        2018 – 2022
+      
+    </p>
+
+    <!-- Institution on its own line, italicized -->
+    <p class="edu-inst"><em>Washington State University</em></p>
+
+    <div class="project-actions">
+      <a class="btn"
+         href="static/pdfs/BS_Diploma.pdf"
+         target="_blank" rel="noopener">
+        View PDF
+      </a>
+    </div>
+  </div>
+</article>
+      
+        <!-- app/templates/_education_card.html -->
+<article class="project-card">
+  <img class="project-image"
+       src="static/images/EIT.jpg"
+       alt="State of Washington logo">
+
+  <div class="project-body">
+    <h3 class="edu-title">Engineering in Training (EIT) License</h3>
+
+    <!-- Years: show "start – end" if both exist; otherwise just start -->
+    <p class="edu-years">
+      
+        2022
+      
+    </p>
+
+    <!-- Institution on its own line, italicized -->
+    <p class="edu-inst"><em>State of Washington</em></p>
+
+    <div class="project-actions">
+      <a class="btn"
+         href="static/pdfs/EIT.pdf"
+         target="_blank" rel="noopener">
+        View PDF
+      </a>
+    </div>
+  </div>
+</article>
+      
+    </div>
+  </div>
+</section>
+
+    </main>
+</body>
+</html>

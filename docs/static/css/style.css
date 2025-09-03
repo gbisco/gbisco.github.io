@@ -299,3 +299,45 @@ body {
     filter: brightness(1.1);
 }
 
+/* ===== Education page header (mirror .projects container) ===== */
+.education {
+  padding: 2rem 1rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.education h1 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* ===== Tiny meta line under the title in cards ===== */
+.edu-meta {
+  margin: .25rem 0 .5rem;
+  font-size: .95rem;
+  opacity: .9;
+  display: flex;
+  gap: .5rem;
+  flex-wrap: wrap;
+}
+.edu-inst { font-weight: 600; }
+.edu-years { opacity: .85; }
+
+/* ===== Education card typography (adds on top of existing project styles) ===== */
+.education .edu-title {
+  /* larger than your default .project-body h3, but below section H1 */
+  font-size: 1.3rem;
+  line-height: 1.25;
+}
+
+.education .edu-years,
+.education .edu-inst {
+  display: block;          /* force each to its own line */
+  font-size: 1.05rem;      /* larger than body text, smaller than title */
+  margin: 0.25rem 0 0;     /* subtle spacing */
+  opacity: 0.95;
+}
+
+.education .edu-inst em {
+  font-style: italic;      /* explicit in case browser defaults change */
+}

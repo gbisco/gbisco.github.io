@@ -1,20 +1,30 @@
-<!--- Snap-in education card for the grid -->
-<article class="education-card">
-  <img class="education-image"
-       src="{{ url_for('static', filename=education.image) }}"
-       alt="{{ education.title }} preview">
+<!-- app/templates/_education_card.html -->
+<article class="project-card">
+  <img class="project-image"
+       src="static/{{ education.image }}"
+       alt="{{ education.institution }} logo">
 
-  <div class="education-body">
-    <h3>{{ education.title }}</h3>
-    <p>{{ education.desc }}</p>
+  <div class="project-body">
+    <h3 class="edu-title">{{ education.title }}</h3>
 
-    <div class="education-actions">
-      {% for link in education.links %}
-        <a class="btn"
-           href="{{ link.href }}" target="_blank" rel="noopener">
-          {{ link.label }}
-        </a>
-      {% endfor %}
+    <!-- Years: show "start – end" if both exist; otherwise just start -->
+    <p class="edu-years">
+      {% if education.end_year %}
+        {{ education.start_year }} – {{ education.end_year }}
+      {% else %}
+        {{ education.start_year }}
+      {% endif %}
+    </p>
+
+    <!-- Institution on its own line, italicized -->
+    <p class="edu-inst"><em>{{ education.institution }}</em></p>
+
+    <div class="project-actions">
+      <a class="btn"
+         href="static/{{ education.pdf }}"
+         target="_blank" rel="noopener">
+        View PDF
+      </a>
     </div>
   </div>
 </article>
