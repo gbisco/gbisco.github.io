@@ -1,0 +1,67 @@
+<!--- Extension of base.html template--->
+<!--- Base template --->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="static/css/style.css">
+
+</head>
+<body>
+    <header>
+        <!-- app/templates/navbar.html -->
+<nav class="navbar" aria-label="Primary">
+  <div class="container">
+    <ul class="nav-right">
+      <li><a href="index.html" data-link="index.html">Home</a></li>
+      <li><a href="projects.html" data-link="projects.html">Projects</a></li>
+      <li><a href="contact.html" data-link="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Optional: auto-highlight current page without Flask 'request' -->
+<script>
+  (function () {
+    var path = location.pathname.split('/').pop() || 'index.html';
+    document.querySelectorAll('.nav-right a').forEach(function (a) {
+      if (a.getAttribute('data-link') === path) a.classList.add('active');
+    });
+  })();
+</script>
+    </header>
+
+    <main>
+        
+<div class="container">
+    <section class="home-container">
+        <div class="home-text">
+            <p class="welcome_msg">WELCOME TO MY WEBSITE</p>
+            <h1>Hi, I'm <span class="highlight">Gabriel Bisco Reinato</span></h1>
+            <h2>a <strong>Student & AI Enthusiat</strong>.</h2>
+
+            <p class="bio">
+                I started my career as an automation engineer working with PLCs after graduating in Mechanical Engineering from Washington State University. 
+                Over time I became more interested in the software side, especially artificial intelligence and machine learning. 
+                Today my focus is on exploring how these technologies can be applied in practical ways to solve real world problems.
+            </p>
+            <p class="bio">
+                I believe in demystifying AI and making it more accessible to people. 
+                For me, technology should feel approachable and useful, not overwhelming. 
+                I enjoy sharing what I learn and finding ways to turn complex ideas into tools that anyone can understand and benefit from.
+            </p>
+        </div>
+
+        <div class="home-image">
+            <div class="portrait">
+                <img src="static/images/linkedinpic.jpg" alt="Your Photo">
+            </div>
+        </div>
+    </section>
+</div>
+
+    </main>
+</body>
+</html>

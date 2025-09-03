@@ -1,0 +1,20 @@
+<!-- app/templates/navbar.html -->
+<nav class="navbar" aria-label="Primary">
+  <div class="container">
+    <ul class="nav-right">
+      <li><a href="index.html" data-link="index.html">Home</a></li>
+      <li><a href="projects.html" data-link="projects.html">Projects</a></li>
+      <li><a href="contact.html" data-link="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Optional: auto-highlight current page without Flask 'request' -->
+<script>
+  (function () {
+    var path = location.pathname.split('/').pop() || 'index.html';
+    document.querySelectorAll('.nav-right a').forEach(function (a) {
+      if (a.getAttribute('data-link') === path) a.classList.add('active');
+    });
+  })();
+</script>

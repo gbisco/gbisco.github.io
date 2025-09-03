@@ -1,0 +1,301 @@
+/* style.css
+   ----------
+   Main stylesheet for my personal website.
+   Handles colors, layout, and styling for navbar, home, projects, and contact pages.
+   (Started with ChatGPT’s help, then patched and tweaked manually)
+   TODO: if this file grows too big, split into multiple CSS files based on website pages.
+*/
+
+/* ---- Overall page look ---- */
+
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    background-color: #1e1e1e;
+    color: #f0f0f0;
+}
+
+/* ---- Shared page container ---- */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* ---- Navbar ---- */
+.navbar {
+    background-color: #111;
+    padding: 1rem 0;
+}
+
+.nav-left {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.nav-right {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    padding: 0;
+    margin: 0;
+    justify-content: flex-end;
+}
+
+.nav-right li a {
+    color: #ff3264;
+    padding: 6px 12px;
+    border-radius: 4px;
+    text-decoration: none;
+}
+
+.nav-right li a.active {
+    background-color: #ff3264;
+    color: #fff;
+}
+
+/* Home page */
+.home-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;       /* vertical centering within the section */
+    gap: 2rem;
+    padding: 3rem 0;
+    min-height: 80vh;
+}
+
+.home-text {
+    flex: 1;
+    min-width: 300px;
+    max-width: 600px;
+}
+
+.home-text h1 {
+    font-size: clamp(2rem, 5vw, 4rem);
+    margin: 0.5rem 0;
+}
+
+.home-text h2 {
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+    margin: 0;
+}
+
+.home-text p {
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    line-height: 1.6;
+}
+
+/* Welcome message above name */
+.welcome_msg {
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #d0d0d0;
+  margin: 0 0 0.75rem;
+  font-size: clamp(0.85rem, 1.2vw, 1rem);
+}
+
+/* Bio paragraph */
+.bio {
+  margin-top: 1rem;
+  max-width: 56ch;
+}
+
+.highlight {
+    color: #ff3264;
+}
+
+/* right side profile image card */
+.home-image {
+    flex: 1;
+    min-width: 250px;
+    max-width: 400px;
+
+    display: flex;
+    justify-content: center;
+}
+
+/* card behind portrait */
+.portrait {
+    position: relative;
+    width: clamp(280px, 40vw, 420px);
+    height: clamp(280px, 40vw, 420px);
+    border-radius: 20px;
+    background: linear-gradient(145deg, #1a1a1a, #222);
+    box-shadow: 0 10px 28px rgba(0,0,0,0.55);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* soft spotlight effect inside card */
+.portrait::before {
+    content: "";
+    position: absolute;
+    inset: 8px;
+    border-radius: inherit;
+    background: radial-gradient(
+        circle at 55% 40%,
+        rgba(255,255,255,0.08),
+        rgba(0,0,0,0) 60%
+    );
+    pointer-events: none;
+}
+
+/* circular photo */
+.home-image img {
+    width: 80%;    
+    height: auto;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #2a2a2a;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+}
+
+
+/* Shared Section */
+.content-section {
+    
+    padding: 2rem 1rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.contact a {
+  color: #ff3264;          
+  text-decoration: none; 
+}
+
+.contact a:hover {
+  color: #ff5c85;
+  text-decoration: underline;
+}
+
+/* ---- Responsive tweaks for mobile ---- */
+@media (max-width: 768px) {
+    .home-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .nav-right {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+}
+
+/* ---- EDUCATION PAGE ---- */
+.education {
+    padding: 2rem 1rem;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.education h1 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.education-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+}
+
+/* PROJECTS GRID & CARDS */
+.projects {
+    padding: 2rem 1rem;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.projects h1 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.projects-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+}
+
+.project-card {
+    width: 33%;
+    min-width: 280px;
+    max-width: 500px;
+    background: linear-gradient(145deg, #1a1a1a, #222);
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    box-shadow: 0 10px 28px rgba(0,0,0,0.55);
+    position: relative;
+}
+
+/* soft glow overlay for project cards */
+.project-card::before {
+    content: "";
+    position: absolute;
+    inset: 8px;
+    border-radius: inherit;
+    background: radial-gradient(
+        circle at 55% 40%,
+        rgba(255,255,255,0.05),
+        rgba(0,0,0,0) 60%
+    );
+    pointer-events: none;
+}
+
+/* project image */
+.project-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+/* project text body */
+.project-body {
+    padding: 14px;
+}
+
+.project-body h3 {
+    margin: 0 0 8px;
+    font-size: 1.1rem;
+}
+
+.project-body p {
+    margin: 0 0 12px;
+    color: #d6d6d6;
+}
+
+.project-actions {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+/* BUTTON */
+.btn {
+    display: inline-block;
+    background: #ff3264;
+    color: #fff;
+    text-decoration: none;
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+.btn:hover {
+    filter: brightness(1.1);
+}
+

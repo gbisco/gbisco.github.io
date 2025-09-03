@@ -1,0 +1,136 @@
+<!--- Extension of base.html template--->
+<!--- Base template --->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects</title>
+    <link rel="stylesheet" href="static/css/style.css">
+
+</head>
+<body>
+    <header>
+        <!-- app/templates/navbar.html -->
+<nav class="navbar" aria-label="Primary">
+  <div class="container">
+    <ul class="nav-right">
+      <li><a href="index.html" data-link="index.html">Home</a></li>
+      <li><a href="projects.html" data-link="projects.html">Projects</a></li>
+      <li><a href="contact.html" data-link="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Optional: auto-highlight current page without Flask 'request' -->
+<script>
+  (function () {
+    var path = location.pathname.split('/').pop() || 'index.html';
+    document.querySelectorAll('.nav-right a').forEach(function (a) {
+      if (a.getAttribute('data-link') === path) a.classList.add('active');
+    });
+  })();
+</script>
+    </header>
+
+    <main>
+        
+<!-- Projects Page
+     ----------------
+     This page shows my work as a grid of cards.
+     Each card has an image, title, short description, and links/buttons. --->
+     
+<section class="projects">
+  <h1>Projects</h1>
+  <div class="projects-grid">
+    
+      <!-- _project_card.html  (static-friendly) -->
+<article class="project-card">
+  <img class="project-image"
+       src="static/images/resumate.png"
+       alt="RESUMATE preview">
+
+  <div class="project-body">
+    <h3>RESUMATE</h3>
+    <p>Free AI powered resume and cover letter tailoring!! BYOK GPT powered application companion for your browswer. Job scrapping, resume tailoring, and cover letter generation all in one place. HELP ME TEST IT ***PLEASE***: become a beta tester today!! Contact me for access.</p>
+
+    <div class="project-actions">
+      
+        <a class="btn"
+           href="https://youtu.be/Y8KHyFbSjNI" target="_blank" rel="noopener">
+          Watch Demo
+        </a>
+      
+    </div>
+  </div>
+</article>
+    
+      <!-- _project_card.html  (static-friendly) -->
+<article class="project-card">
+  <img class="project-image"
+       src="static/images/website-thumb.jpg"
+       alt="This Website preview">
+
+  <div class="project-body">
+    <h3>This Website</h3>
+    <p>Personal portfolio website built in flask. Feel free to check out the code on github!</p>
+
+    <div class="project-actions">
+      
+        <a class="btn"
+           href="https://github.com/gbiscor1/jhu_software_concepts/tree/main/module_1/personal_website" target="_blank" rel="noopener">
+          GitHub
+        </a>
+      
+    </div>
+  </div>
+</article>
+    
+      <!-- _project_card.html  (static-friendly) -->
+<article class="project-card">
+  <img class="project-image"
+       src="static/images/hackathon-thumb.png"
+       alt="Shinkansen Travel Experience Hackathon preview">
+
+  <div class="project-body">
+    <h3>Shinkansen Travel Experience Hackathon</h3>
+    <p>Applied machine learning techniques to predict customer satisfaction on Shinkansen bullet trains. Explored multiple models; XGBoost achieved the highest accuracy.</p>
+
+    <div class="project-actions">
+      
+        <a class="btn"
+           href="https://github.com/gbisco/Shinkansen-Travel-Experience-Hackathon" target="_blank" rel="noopener">
+          GitHub
+        </a>
+      
+    </div>
+  </div>
+</article>
+    
+      <!-- _project_card.html  (static-friendly) -->
+<article class="project-card">
+  <img class="project-image"
+       src="static/images/MIT-thumb.jpg"
+       alt="Facial Emotion Recognition AI Model preview">
+
+  <div class="project-body">
+    <h3>Facial Emotion Recognition AI Model</h3>
+    <p>This project demonstrates the application of deep learning techniques for facial emotion recognition using transfer learning and custom CNNs. By leveraging pre-trained convolutional neural networks (CNNs) such as VGG16, ResNet50, and EfficientNet, the model are fine-tuned to classify emotions from facial images into predefined categories.</p>
+
+    <div class="project-actions">
+      
+        <a class="btn"
+           href="https://github.com/gbisco/Facial_Emotion_recognition_models" target="_blank" rel="noopener">
+          GitHub
+        </a>
+      
+    </div>
+  </div>
+</article>
+    
+  </div>
+</section>
+
+    </main>
+</body>
+</html>
